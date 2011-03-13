@@ -4,7 +4,7 @@ Forked from [Johnno Nolan's ChessBoard-Kata][jnck]
 
 Kata rules are in the _readme_ file
 
-This project is configured so it can be run with RVM and Bundler. The following commands should get you set up
+This project is configured so it can be run with RVM and Bundler. The following commands should get you set up:
 
     rvm get head
     rvm install 1.9.2
