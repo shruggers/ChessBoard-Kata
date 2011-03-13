@@ -1,6 +1,4 @@
 <%
-requires = "--require features/support --require features/step_definitions"
-# std_opts = "--format #{ENV['CUCUMBER_FORMAT'] || 'progress'} --strict --tags ~@wip #{requires}"
 std_opts = "--format #{ENV['CUCUMBER_FORMAT'] || 'progress'} --strict --tags ~@wip"
 %>
 default: <%= std_opts %> features
