@@ -18,7 +18,7 @@ When %r/^I move the Knight to ([A-Z][0-9])$/ do |square|
   pending # express the regexp above with the code you wish you had
 end
 
-Then %r/^I should be shown "([^"]*)"$/ do |arg1|
+Then %r/^I should be shown "([^"]*)"$/ do |expected_output|
   pending # express the regexp above with the code you wish you had
 end
 
