@@ -4,13 +4,7 @@ gem "bundler"
 
 group :development do
   gem "autotest-standalone"
-end
-
-group :darwin do
   gem "autotest-fsevent"
-end
-
-group :linux do
   gem "autotest-inotify"
 end
 
