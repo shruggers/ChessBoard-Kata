@@ -22,7 +22,7 @@ Then %r/^I should be shown "([^"]*)"$/ do |expected_output|
   pending # express the regexp above with the code you wish you had
 end
 
-Given %r/^the valid moves are$/ do |table|
+Given %r/^the valid moves are$/ do |moves_table|
   # table is a Cucumber::Ast::Table
   pending # express the regexp above with the code you wish you had
 end
