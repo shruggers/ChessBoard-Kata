@@ -3,6 +3,7 @@
   As a Player
   I want to move the Pawn legally.
 
+  @wip
   Scenario: Pawn Starts on home row.
     Given the game has just started
     And the Pawn is on B2
