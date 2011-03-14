@@ -3,7 +3,10 @@
   As a Player
   I want to move the Pawn legally.
 
+  # Assuming pawns are white and knights are black
+  @wip
   Scenario: Pawn Starts on home row.
+    # The direction of the move depends on what colour the piece is
     Given the game has just started 
     And the Pawn is on B2
     And the Knight is at G8
@@ -11,6 +14,7 @@
     Then I should be shown "Pawn to B3"
     And Pawn should be at B3
 
+    # This seems like a separate scenario
     Given the game has just started
     And the Pawn is on E2
     And the Knight is at G8
@@ -18,6 +22,7 @@
     Then I should be shown "Pawn to E4"
     And Pawn should be at E4
 
+    # We were unsure if this rule is correct
     Given the game has not just started
     And the Pawn is on D2
     And the Knight is at G8

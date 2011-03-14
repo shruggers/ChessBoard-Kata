@@ -1,4 +1,8 @@
 module ChessWorld
+  def reset_game
+    @chessboard = nil
+  end
+  
   def chessboard
     @chessboard ||= Chessboard.new
   end
@@ -37,15 +41,17 @@ Given %r/^the valid moves are$/ do |moves_table|
 end
 
 Given %r/^the game has just started$/ do
-  pending # express the regexp above with the code you wish you had
+  reset_game
 end
 
+# No colour given here - assume white
 Given %r/^the Pawn is on ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  Given "I have a White Pawn at #{square}"
 end
 
+# No colour given here - assume black
 Given %r/^the Knight is at ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  Given "I have a Black Knight at #{square}"
 end
 
 Then %r/^Pawn should be at ([A-Z][0-9])$/ do |square|
