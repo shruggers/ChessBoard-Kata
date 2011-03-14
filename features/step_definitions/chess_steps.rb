@@ -1,21 +1,31 @@
 Given %r/^I have a White Pawn at ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  @board ||= ChessBoard.new
+  @white_pawn = WhitePawn.new(@board, square)
 end
 
 Given %r/^I have a Black Knight at ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  @board ||= ChessBoard.new
+  @black_knight = BlackKnight.new(@board, square)
 end
 
 When %r/^I move the Pawn to ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  begin 
+    @white_pawn.move_to(square)
+  rescue Piece::IllegalMoveError => e
+    @current_error = e
+  end
 end
 
 Then %r/^I should be warned of an illegal move message$/ do
-  pending # express the regexp above with the code you wish you had
+  @current_error.should be_kind_of Piece::IllegalMoveError
 end
 
 When %r/^I move the Knight to ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  begin 
+    @black_knight.move_to(square)
+  rescue Piece::IllegalMoveError => e
+    @current_error = e
+  end
 end
 
 Then %r/^I should be shown "([^"]*)"$/ do |expected_output|

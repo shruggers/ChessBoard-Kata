@@ -1,0 +1,2 @@
+class BlackKnight < Piece
+end
