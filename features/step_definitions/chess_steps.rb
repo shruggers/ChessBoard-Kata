@@ -1,17 +1,25 @@
+module ChessWorld
+  def chessboard
+    @chessboard ||= Chessboard.new
+  end
+end
+World(ChessWorld)
+
 Given %r/^I have a White Pawn at ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  chessboard.add(Pawn.new, square)
+  @pawn_square = square
 end
 
 Given %r/^I have a Black Knight at ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  chessboard.add(Knight.new, square)
 end
 
 When %r/^I move the Pawn to ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  chessboard.move(@pawn_square, square)
 end
 
 Then %r/^I should be warned of an illegal move message$/ do
-  pending # express the regexp above with the code you wish you had
+  chessboard.status_message.should eq "Impossible move - outside board"
 end
 
 When %r/^I move the Knight to ([A-Z][0-9])$/ do |square|

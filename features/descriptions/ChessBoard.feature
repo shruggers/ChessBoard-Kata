@@ -5,8 +5,10 @@
 
   Scenario: Pawn at top.
     Given I have a White Pawn at A8 
+    # We're ignoring this for now
     And I have a Black Knight at A1
     When I move the Pawn to A9
+    # We made this the special case "impossible move"
     Then I should be warned of an illegal move message
 
   Scenario: Knight heads off board
