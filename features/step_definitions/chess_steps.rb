@@ -29,7 +29,7 @@ When %r/^I move the Knight to ([A-Z][0-9])$/ do |square|
 end
 
 Then %r/^I should be shown "([^"]*)"$/ do |expected_output|
-  pending # express the regexp above with the code you wish you had
+  @board.last_move.should == expected_output
 end
 
 Given %r/^the valid moves are$/ do |moves_table|
@@ -38,15 +38,17 @@ Given %r/^the valid moves are$/ do |moves_table|
 end
 
 Given %r/^the game has just started$/ do
-  pending # express the regexp above with the code you wish you had
+  @board = ChessBoard.new
+  @white_pawn = WhitePawn.new(@board)
+  @black_knight = BlackKnight.new(@board)
 end
 
 Given %r/^the Pawn is on ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  @white_pawn.starts_at square
 end
 
 Given %r/^the Knight is at ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  @black_knight.starts_at square
 end
 
 Then %r/^Pawn should be at ([A-Z][0-9])$/ do |square|

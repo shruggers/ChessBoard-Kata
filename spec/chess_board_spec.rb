@@ -12,4 +12,11 @@ describe ChessBoard do
     
     it { subject.should_not have_square "A9" }
   end
+  
+  describe "#move message" do
+    let(:message) { "G'day" }
+    before { subject.move_made message }
+    
+    its(:last_move) { should == "G'day" }
+  end
 end
