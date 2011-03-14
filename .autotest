@@ -4,3 +4,5 @@ when /darwin/
 when /linux/
   require 'autotest/inotify'
 end
+
+require "autotest/bundler"
