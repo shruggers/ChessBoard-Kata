@@ -12,6 +12,7 @@ end
 
 Given %r/^I have a Black Knight at ([A-Z][0-9])$/ do |square|
   chessboard.add(Knight.new, square)
+  @knight_square = square
 end
 
 When %r/^I move the Pawn to ([A-Z][0-9])$/ do |square|
@@ -23,7 +24,7 @@ Then %r/^I should be warned of an illegal move message$/ do
 end
 
 When %r/^I move the Knight to ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  chessboard.move(@knight_square, square)
 end
 
 Then %r/^I should be shown "([^"]*)"$/ do |expected_output|

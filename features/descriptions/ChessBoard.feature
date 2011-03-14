@@ -11,6 +11,8 @@
     # We made this the special case "impossible move"
     Then I should be warned of an illegal move message
 
+  # This passed as soon as we added the Move Knight step as
+  # we implemented all the impossible move rules in RSpec
   Scenario: Knight heads off board
     Given I have a Black Knight at G8
     And I have a White Pawn at A1
