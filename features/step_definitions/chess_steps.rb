@@ -19,7 +19,7 @@ When %r/^I move the Knight to ([A-Z][0-9])$/ do |square|
 end
 
 Then %r/^I should be shown "([^"]*)"$/ do |expected_output|
-  pending # express the regexp above with the code you wish you had
+  @chessmaster.messages.should include(expected_output)
 end
 
 Given %r/^the valid moves are$/ do |moves_table|
@@ -28,19 +28,19 @@ Given %r/^the valid moves are$/ do |moves_table|
 end
 
 Given %r/^the game has just started$/ do
-  pending # express the regexp above with the code you wish you had
 end
 
 Given %r/^the Pawn is on ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  @chessmaster = ChessMaster2000.new
+  @board = ChessBoard.new({square => Pawn.new}, @chessmaster)
 end
 
 Given %r/^the Knight is at ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  #todo: do stuff in here eventually
 end
 
 Then %r/^Pawn should be at ([A-Z][0-9])$/ do |square|
-  pending # express the regexp above with the code you wish you had
+  @board.position_of(@pawn).should == square
 end
 
 Given %r/^the game has not just started$/ do
