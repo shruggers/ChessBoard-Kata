@@ -12,7 +12,7 @@
 
   Scenario Outline: Illegal Move
     Given I have a Black Knight at D4
-    And the valid moves are 
+    And the valid moves are
       | move |
       | B3   |
       | B5   |

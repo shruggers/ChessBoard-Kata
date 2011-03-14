@@ -4,7 +4,7 @@
   I want to be prevented from entering moves outside the boundary of the board.
 
   Scenario: Pawn at top.
-    Given I have a White Pawn at A8 
+    Given I have a White Pawn at A8
     And I have a Black Knight at A1
     When I move the Pawn to A9
     Then I should be warned of an illegal move message
