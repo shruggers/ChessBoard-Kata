@@ -4,7 +4,7 @@
   I want to move the Pawn legally.
 
   Scenario: Pawn Starts on home row.
-    Given the game has just started 
+    Given the game has just started
     And the Pawn is on B2
     And the Knight is at G8
     When I move the Pawn to B3
